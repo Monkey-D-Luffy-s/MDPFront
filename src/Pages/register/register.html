@@ -1,0 +1,37 @@
+<div class="min-h-screen bg-black p-6 flex justify-center items-center">
+  <div class="w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-2xl">
+    <h2 class="text-2xl font-bold text-white mb-6">Create Account</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div class="space-y-4">
+        <input formControlName="firstName" type="text" placeholder="First Name" class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+        <input formControlName="lastName" type="text" placeholder="Last Name" class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+        <input formControlName="dob" type="date" class="w-full bg-zinc-950 border border-zinc-800 text-zinc-400 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+      </div>
+
+      <div class="space-y-4">
+        <input formControlName="email" type="email" placeholder="Email Address" class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+        <input formControlName="mobile" type="tel" placeholder="Mobile Number" class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+        <input formControlName="password" type="password" placeholder="Password" class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+      </div>
+
+      <div class="md:col-span-2">
+        <textarea formControlName="address" placeholder="Residential Address" class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 transition"></textarea>
+      </div>
+
+      <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-zinc-500 text-sm mb-2">Profile Picture</label>
+          <input (change)="onFileChange($event, 'profile')" type="file" class="w-full text-zinc-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-zinc-800 file:text-white hover:file:bg-zinc-700 transition">
+        </div>
+        <div>
+          <label class="block text-zinc-500 text-sm mb-2">Signature</label>
+          <input (change)="onFileChange($event, 'signature')" type="file" class="w-full text-zinc-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-zinc-800 file:text-white hover:file:bg-zinc-700 transition">
+        </div>
+      </div>
+
+      <button type="submit" class="md:col-span-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition">Register</button>
+    </form>
+  </div>
+</div>
