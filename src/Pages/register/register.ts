@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { authService } from '../../services/sessionSignal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styles: ``,
 })
 export class Register {
-
+  authservice = inject(authService);
+  rounter = inject(Router);
   registerForm: FormGroup;
   files: any = { profile: null, signature: null };
 
@@ -44,6 +47,8 @@ export class Register {
       body: formData});
     var data = await result.json();
     console.log(data);
+    this.authservice.setSession(data);
+    this.rounter.navigate(['/about']);
     // Now send formData via HttpClient
   }
 
