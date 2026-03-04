@@ -39,7 +39,7 @@ export class Guestmessages {
         .subscribe(data => {
           console.log(data);
         });
-      
+      console.log(this.name, this.message);
     this.guests.push({id:crypto.randomUUID(), name:this.name, message:this.message});
     this.name = '';
     this.message = '';
