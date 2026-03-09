@@ -10,6 +10,35 @@
         <a routerLink="/home" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">Home</a>
         <a routerLink="/about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">About</a>
         <a routerLink="/dashboards" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">Dashboards</a>
+         <div class="relative group">
+          <button class="hover:text-white transition">
+            Services
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
+          >
+            <a
+              class="block px-4 py-2 hover:bg-gray-700 transition"
+              href="/users"
+            >
+              Create User
+            </a>
+
+            <a
+              class="block px-4 py-2 hover:bg-gray-700 transition"
+              href="#"
+            >
+              Assing Roles
+            </a>
+
+            <a
+              class="block px-4 py-2 hover:bg-gray-700 transition"
+              href="#"
+            >
+              Cloud Services
+            </a>
+          </div>
+        </div>
         <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-bold transition">Admin</button>
 
         <div *ngIf="!isloggedIn()" class="flex items-center gap-2 border-l border-zinc-800 ml-2 pl-4">

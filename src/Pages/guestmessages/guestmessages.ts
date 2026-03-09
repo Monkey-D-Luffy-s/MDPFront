@@ -23,24 +23,24 @@ export class Guestmessages {
   guests:any[] = [];
   user = this.authService.currentUser;
   constructor(){
-    this.http.get<any[]>('https://localhost:7016/api/guestmessages')
+    this.http.get<{data: any[]}>('https://localhost:7016/api/guestmessages')
       .subscribe(data => {
         console.log(data);
-        this.guests = data;
+        this.guests = data.data;
       });
-      
   }
   async onAdd(){
       const messages = {
         "GuestName": this.name,
         "Message": this.message
       }
-      this.http.post('https://localhost:7016/api/guestmessages', messages)
+      this.http.post<{data: any[]}>('https://localhost:7016/api/guestmessages', messages)
         .subscribe(data => {
           console.log(data);
+          this.guests.push(data.data);
         });
-      console.log(this.name, this.message);
-    this.guests.push({id:crypto.randomUUID(), name:this.name, message:this.message});
+    //  console.log(this.name, this.message);
+    //this.guests.push({id:crypto.randomUUID(), name:this.name, message:this.message});
     this.name = '';
     this.message = '';
   }

@@ -5,6 +5,7 @@ import { Dashboard } from '../Components/dashboard/dashboard';
 import { Admin } from '../Components/admin/admin';
 import { Login } from '../Pages/login/login';
 import { Register } from '../Pages/register/register';
+import { CreateUsers } from '../Pages/create-users/create-users';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: 'dashboards', component:Dashboard },
     { path: 'Admin', component: Admin},
     { path: 'login', component: Login},
-    { path: 'register', component: Register}
+    { path: 'register', component: Register},
+    { path: 'users', component: CreateUsers}
 ];

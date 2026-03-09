@@ -1,0 +1,43 @@
+<div class="min-h-screen bg-gray-900 text-gray-200 flex items-center justify-center">
+  <div class="bg-gray-800 p-8 rounded-xl shadow-xl w-96">
+
+    <h2 class="text-2xl font-semibold mb-6 text-white">Create Entry</h2>
+
+    <!-- Dropdown 1 -->
+    <div class="mb-4">
+      <label class="block mb-2 text-sm">Select User</label>
+      <select
+        [(ngModel)]="userId"
+        class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 focus:outline-none focus:border-blue-500"
+      >
+        <option value="">Select</option>
+        <option *ngFor="let c of users" [value]="c.email">
+          {{ c.email }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Dropdown 2 -->
+    <div class="mb-6">
+      <label class="block mb-2 text-sm">Select Role</label>
+      <select
+        [(ngModel)]="roleId"
+        class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 focus:outline-none focus:border-blue-500"
+      >
+        <option value="">Select</option>
+        <option *ngFor="let s of roles" [value]="s.name">
+          {{ s.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Save Button -->
+    <button
+      (click)="save()"
+      class="w-full bg-blue-600 hover:bg-blue-700 transition rounded-lg py-2 font-medium"
+    >
+      Save
+    </button>
+
+  </div>
+</div>
