@@ -1,0 +1,11 @@
+<div class="min-h-screen bg-black p-8">
+      <h1 class="text-4xl font-extrabold text-white mb-8 text-center">Our Products</h1>
+      
+      <div *ngIf="loading" class="text-white text-center">Loading products...</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        @for (item of products; track item.productId) {
+          <app-product-card [product]="item"></app-product-card>
+        }
+      </div>
+    </div>

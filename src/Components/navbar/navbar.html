@@ -7,7 +7,37 @@
       </div>
 
       <div class="hidden md:flex items-center space-x-4">
-        <a routerLink="/home" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">Home</a>
+        <div class="relative group">
+          <button class="hover:text-white transition py-2 ">
+            Products
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
+          >
+            <a routerLink="/products" class="block px-4 py-2 hover:bg-gray-700 transition">Add Product</a>
+
+            <a
+              class="block px-4 py-2 hover:bg-gray-700 transition"
+              href="/productlist"
+            >
+              Products
+            </a>
+
+            <a
+              class="block px-4 py-2 hover:bg-gray-700 transition"
+              href="#"
+            >
+              Assing Roles
+            </a>
+
+            <a
+              class="block px-4 py-2 hover:bg-gray-700 transition"
+              href="#"
+            >
+              Cloud Services
+            </a>
+          </div>
+        </div>
         <a routerLink="/about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">About</a>
         <a routerLink="/dashboards" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">Dashboards</a>
          <div class="relative group">

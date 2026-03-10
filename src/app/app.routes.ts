@@ -6,6 +6,8 @@ import { Admin } from '../Components/admin/admin';
 import { Login } from '../Pages/login/login';
 import { Register } from '../Pages/register/register';
 import { CreateUsers } from '../Pages/create-users/create-users';
+import { Products } from '../Pages/products/products';
+import { ProductList } from '../Pages/product-list/product-list';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,5 +17,7 @@ export const routes: Routes = [
     { path: 'Admin', component: Admin},
     { path: 'login', component: Login},
     { path: 'register', component: Register},
+    { path: 'products', component: Products},
+    { path: 'productlist', component: ProductList},
     { path: 'users', component: CreateUsers}
 ];

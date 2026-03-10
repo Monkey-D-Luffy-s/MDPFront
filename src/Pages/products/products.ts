@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -15,13 +16,6 @@ contactForm: FormGroup;
   ProductImgURL: File | null = null;
   ProductImgUrl2: File | null = null;
   submitted = false;
-        //public string ProductName { get; set; }
-        //public string ProductDescription { get; set; }
-        //public double UnitPrice { get; set; }
-        //public int InStock { get; set; }
-        //public string ProductImgURL { get; set; }
-        //public string ProductImgUrl2 { get; set; }
-
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       ProductName: ['', [Validators.required]],
@@ -50,10 +44,10 @@ contactForm: FormGroup;
       formData.append('ProductDescription', this.contactForm.get('ProductDescription')?.value);
       formData.append('UnitPrice', this.contactForm.get('UnitPrice')?.value);
       formData.append('InStock', this.contactForm.get('InStock')?.value);
-      formData.append('ProductImgUrl2', this.ProductImgUrl2, this.ProductImgUrl2.name);
-      formData.append('ProductImgURL', this.ProductImgURL, this.ProductImgURL.name);
+      formData.append('ProductImg1', this.ProductImgUrl2, this.ProductImgUrl2.name);
+      formData.append('ProductImg2', this.ProductImgURL, this.ProductImgURL.name);
       // Replace with your actual backend endpoint
-      const endpoint = 'https://api.example.com/upload';
+      const endpoint = 'https://localhost:7132/api/product';
       console.log(this.contactForm.get('ProductName')?.value);
       console.log(this.contactForm.get('ProductDescription')?.value);
       console.log(this.contactForm.get('UnitPrice')?.value);

@@ -1,0 +1,22 @@
+<div class="max-w-sm bg-gray-900 border border-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+      <img class="w-full h-48 object-cover" src="https://localhost:7132/cdn/{{ product.productImgURL }}" [alt]="product.productName" />
+      
+      <div class="p-5">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{{ product.productName }}</h5>
+        
+        <p class="mb-3 font-normal text-gray-400 line-clamp-2">
+          {{ product.productDescription }}
+        </p>
+         <p class="mb-3 font-normal text-gray-400 line-clamp-2">
+          {{  product.inStock }} Left
+        </p>
+
+        <div class="flex items-center justify-between mt-4">
+          <span class="text-3xl font-bold text-blue-400">₹{{ product.unitPrice }}</span>
+          
+          <button class="px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
